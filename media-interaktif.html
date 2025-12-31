@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FinLit Quest – Media Interaktif</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --primary:#22d3ee;
+  --accent:#7c3aed;
+  --text:#e5e7eb;
+  --soft:#94a3b8;
+}
+
+*{box-sizing:border-box;font-family:Poppins,system-ui,sans-serif}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top,#312e81,transparent 45%),
+    linear-gradient(180deg,var(--bg),var(--bg));
+  color:var(--text);
+  padding:24px 16px;
+}
+
+.wrapper{max-width:960px;margin:auto}
+
+.header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:26px;
+}
+
+.back{
+  background:#1e293b;
+  color:var(--text);
+  border:none;
+  padding:12px 18px;
+  border-radius:14px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.card{
+  background:var(--card);
+  border-radius:34px;
+  padding:36px 32px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.05),
+    0 30px 70px rgba(0,0,0,.6);
+}
+
+.badge{
+  display:inline-block;
+  background:linear-gradient(135deg,#a78bfa,#7c3aed);
+  color:#020617;
+  font-size:11px;
+  font-weight:800;
+  padding:7px 16px;
+  border-radius:999px;
+  margin-bottom:18px;
+}
+
+h1{font-size:30px;margin:0 0 12px}
+
+.subtitle{
+  font-size:14px;
+  color:var(--soft);
+  line-height:1.8;
+  margin-bottom:46px;
+}
+
+.section{margin-bottom:56px}
+
+.section h3{
+  font-size:22px;
+  margin-bottom:10px;
+}
+
+.section-desc{
+  font-size:14px;
+  color:var(--soft);
+  line-height:1.7;
+  margin-bottom:24px;
+}
+
+/* ================= PDF ================= */
+.pdf-card{
+  background:linear-gradient(135deg,rgba(34,211,238,.08),rgba(124,58,237,.12));
+  border-radius:28px;
+  padding:26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);
+}
+
+.pdf-info h4{
+  margin:0 0 6px;
+  font-size:18px;
+}
+
+.pdf-info p{
+  margin:0;
+  font-size:13px;
+  color:var(--soft);
+}
+
+.pdf-action{
+  display:flex;
+  gap:12px;
+}
+
+.pdf-action a{
+  padding:12px 22px;
+  border-radius:20px;
+  font-size:14px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.25s;
+}
+
+.btn-open{
+  background:linear-gradient(135deg,var(--primary),#67e8f9);
+  color:#020617;
+}
+
+.btn-download{
+  background:linear-gradient(135deg,var(--accent),#4338ca);
+  color:white;
+}
+
+.pdf-action a:hover{transform:translateY(-3px)}
+
+/* ================= VIDEO ================= */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
+}
+
+.video-card{
+  background:#020617;
+  border-radius:26px;
+  overflow:hidden;
+  box-shadow:0 20px 50px rgba(0,0,0,.6);
+  transition:.3s;
+}
+
+.video-card:hover{
+  transform:translateY(-6px);
+}
+
+.video-thumb{
+  position:relative;
+  padding-top:56.25%;
+}
+
+.video-thumb iframe{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  border:none;
+}
+
+.video-info{
+  padding:18px 20px;
+}
+
+.video-info h4{
+  margin:0 0 6px;
+  font-size:16px;
+}
+
+.video-info span{
+  font-size:13px;
+  color:var(--soft);
+}
+
+/* ================= INFOGRAFIS ================= */
+.infografis-card{
+  background:#020617;
+  border-radius:30px;
+  padding:22px;
+  text-align:center;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.06),
+    0 20px 60px rgba(0,0,0,.5);
+  transition:.3s;
+}
+
+.infografis-card:hover{
+  transform:scale(1.015);
+}
+
+.infografis-card img{
+  max-width:100%;
+  border-radius:22px;
+}
+
+.infografis-caption{
+  margin-top:14px;
+  font-size:13px;
+  color:var(--soft);
+}
+
+/* ================= ACTION ================= */
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:60px;
+}
+
+.next{
+  background:linear-gradient(135deg,var(--accent),#4338ca);
+  color:white;
+  text-decoration:none;
+  padding:18px 44px;
+  border-radius:28px;
+  font-weight:900;
+  box-shadow:0 20px 50px rgba(124,58,237,.55);
+  transition:.25s;
+}
+
+.next:hover{transform:translateY(-4px)}
+
+@media(max-width:640px){
+  h1{font-size:24px;}
+}
+</style>
+</head>
+
+<body>
+<div class="wrapper">
+
+  <div class="header">
+    <button class="back" onclick="history.back()">← Back</button>
+  </div>
+
+  <div class="card">
+    <span class="badge">MEDIA PEMBELAJARAN</span>
+    <h1>Eksplorasi Konten Interaktif</h1>
+    <div class="subtitle">
+      Pengetahuan tak selalu datang dengan suara keras.  
+      Kadang ia menyusup pelan, lalu tinggal lama di kepala.
+    </div>
+
+    <!-- PDF -->
+    <div class="section">
+      <h3>📎 Modul Pembelajaran Digital</h3>
+      <div class="section-desc">
+        Dokumen utama yang merangkum inti materi secara sistematis dan mudah dipahami.
+      </div>
+
+      <div class="pdf-card">
+        <div class="pdf-info">
+          <h4>Keamanan Data Digital</h4>
+          <p>Referensi utama • Google Docs • PDF</p>
+        </div>
+        <div class="pdf-action">
+          <a href="https://docs.google.com/document/d/1ikc53AU-s0LorghcpFwRpJ4NK4jej58yCZhjvibB1GI/preview" target="_blank" class="btn-open">
+            📖 Buka
+          </a>
+          <a href="https://docs.google.com/document/d/1ikc53AU-s0LorghcpFwRpJ4NK4jej58yCZhjvibB1GI/export?format=pdf" target="_blank" class="btn-download">
+            ⬇️ Unduh
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- VIDEO -->
+    <div class="section">
+      <h3>🎥 Video Interaktif</h3>
+      <div class="section-desc">
+        Visualisasi konsep agar materi lebih terasa nyata dan kontekstual.
+      </div>
+
+      <div class="video-grid">
+
+        <div class="video-card">
+          <div class="video-thumb">
+            <iframe src="https://www.youtube.com/embed/QRX8CsPxPO4" allowfullscreen></iframe>
+          </div>
+          <div class="video-info">
+            <h4>Ancaman Data di Era Digital</h4>
+            <span>Dasar & realita lapangan</span>
+          </div>
+        </div>
+
+        <div class="video-card">
+  <div class="video-thumb">
+    <iframe 
+      src="https://www.youtube.com/embed/5CBQNwLuCuc" 
+      allowfullscreen>
+    </iframe>
+  </div>
+  <div class="video-info">
+    <h4>Point penting Financial Technology</h4>
+    <span>Praktik & kebiasaan aman</span>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+
+    <!-- INFOGRAFIS -->
+    <div class="section">
+      <h3>📊 Infografis Ringkasan</h3>
+      <div class="section-desc">
+        Gambaran visual singkat untuk menangkap inti pembahasan dalam sekali pandang.
+      </div>
+
+      <div class="infografis-card">
+        <img src="img/infografis-fintech.jpeg" alt="Infografis Fintech" loading="lazy">
+        <div class="infografis-caption">
+          Alur data, risiko, dan langkah mitigasi dalam ekosistem digital
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <a href="quiz.html" class="next">🧩 Lanjut ke Quiz</a>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>

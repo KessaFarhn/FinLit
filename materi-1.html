@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FinLit Quest – Apa itu Fintech</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --primary:#22d3ee;
+  --accent:#7c3aed;
+  --text:#e5e7eb;
+  --soft:#94a3b8;
+}
+
+*{
+  box-sizing:border-box;
+  font-family:Poppins,system-ui,sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top,#312e81,transparent 45%),
+    linear-gradient(180deg,var(--bg),var(--bg));
+  color:var(--text);
+  padding:24px 16px;
+}
+
+.game{
+  max-width:760px;
+  margin:auto;
+}
+
+/* HEADER */
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:24px;
+}
+
+.back{
+  background:#1e293b;
+  color:var(--text);
+  border:none;
+  padding:10px 16px;
+  border-radius:14px;
+  cursor:pointer;
+}
+
+.progress{
+  font-size:12px;
+  color:var(--soft);
+}
+
+/* CARD SCROLLABLE */
+.card{
+  background:var(--card);
+  border-radius:28px;
+  padding:28px 24px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.05),
+    0 20px 50px rgba(0,0,0,.45);
+
+  max-height:calc(100vh - 140px);
+  overflow-y:auto;
+}
+
+/* Scrollbar */
+.card::-webkit-scrollbar{width:6px;}
+.card::-webkit-scrollbar-thumb{
+  background:rgba(255,255,255,.15);
+  border-radius:10px;
+}
+
+/* TITLE */
+.badge{
+  display:inline-block;
+  background:linear-gradient(135deg,var(--primary),#67e8f9);
+  color:#020617;
+  font-size:11px;
+  font-weight:700;
+  padding:6px 14px;
+  border-radius:999px;
+  margin-bottom:14px;
+}
+
+h1{
+  font-size:28px;
+  margin:0 0 14px;
+}
+
+.subtitle{
+  font-size:14px;
+  color:var(--soft);
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+/* SECTION */
+.section{
+  margin-bottom:26px;
+}
+
+.section h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.section p{
+  font-size:14px;
+  line-height:1.75;
+  margin-bottom:14px;
+}
+
+/* STORY */
+.story{
+  background:linear-gradient(135deg,rgba(34,211,238,.12),rgba(124,58,237,.08));
+  padding:18px;
+  border-radius:18px;
+  font-size:14px;
+  line-height:1.75;
+  margin-bottom:26px;
+}
+
+/* HIGHLIGHT */
+.highlight{
+  background:rgba(34,211,238,.12);
+  border-left:4px solid var(--primary);
+  padding:16px;
+  border-radius:14px;
+  margin:26px 0;
+  font-size:14px;
+  color:#cffafe;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:16px;
+}
+
+.box{
+  background:#020617;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.box strong{
+  display:block;
+  color:var(--primary);
+  margin-bottom:6px;
+  font-size:14px;
+}
+
+.box p{
+  font-size:13px;
+  color:var(--soft);
+  line-height:1.6;
+}
+
+/* ACTION */
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:30px;
+}
+
+.next{
+  background:linear-gradient(135deg,var(--accent),#4338ca);
+  color:white;
+  text-decoration:none;
+  padding:14px 28px;
+  border-radius:18px;
+  font-weight:700;
+  box-shadow:0 12px 30px rgba(124,58,237,.45);
+}
+
+/* MOBILE */
+@media(max-width:640px){
+  h1{font-size:24px;}
+  .card{max-height:calc(100vh - 120px);}
+}
+</style>
+</head>
+
+<body>
+<div class="game">
+
+  <div class="header">
+    <button class="back" onclick="history.back()">← Back</button>
+    <div class="progress">Materi 1 dari 4</div>
+  </div>
+
+  <div class="card">
+    <span class="badge">MATERI 1</span>
+    <h1>Apa itu Financial Technology (Fintech)?</h1>
+    <div class="subtitle">
+      Fondasi awal memahami transformasi keuangan
+      di era teknologi digital.
+    </div>
+
+    <div class="story">
+      Financial Technology atau fintech muncul
+      sebagai respons atas kebutuhan layanan keuangan
+      yang lebih cepat, mudah, dan adaptif.
+      Ia hadir ketika sistem keuangan konvensional
+      mulai terasa lambat di tengah dunia yang serba digital.
+    </div>
+
+    <div class="section">
+      <h3>📌 Pengertian Fintech</h3>
+      <p>
+        Financial Technology (fintech) merupakan inovasi
+        di bidang jasa keuangan yang memanfaatkan teknologi digital
+        untuk meningkatkan efisiensi, aksesibilitas,
+        dan kualitas layanan keuangan.
+      </p>
+      <p>
+        Fintech mengintegrasikan teknologi informasi
+        dengan sistem keuangan tradisional,
+        memungkinkan masyarakat mengakses pembayaran digital,
+        pinjaman online, investasi,
+        hingga manajemen keuangan
+        melalui perangkat elektronik.
+      </p>
+    </div>
+
+    <div class="highlight">
+      Fintech tidak hanya mengubah cara bertransaksi,
+      tetapi juga mendorong inklusi keuangan,
+      terutama bagi masyarakat
+      yang sebelumnya belum terjangkau
+      lembaga keuangan formal.
+    </div>
+
+    <div class="section">
+      <h3>🚀 Perkembangan Fintech di Era Digital</h3>
+      <p>
+        Seiring meningkatnya penggunaan internet
+        dan smartphone,
+        fintech berkembang pesat
+        melalui berbagai model bisnis:
+        digital payment, P2P lending,
+        crowdfunding, insurtech,
+        dan investasi digital.
+      </p>
+      <p>
+        Teknologi digital membuat layanan keuangan
+        yang sebelumnya rumit
+        kini dapat diakses
+        hanya dalam hitungan menit.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <strong>💳 Digital Payment</strong>
+        <p>Transaksi cepat tanpa uang tunai.</p>
+      </div>
+      <div class="box">
+        <strong>🤝 P2P Lending</strong>
+        <p>Mempertemukan peminjam dan pemberi dana.</p>
+      </div>
+      <div class="box">
+        <strong>📈 Investasi Digital</strong>
+        <p>Akses investasi yang lebih inklusif.</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>🇮🇩 Peran Fintech di Indonesia</h3>
+      <p>
+        Di Indonesia,
+        fintech menjadi pilar penting
+        dalam mendukung inklusi keuangan nasional.
+        Otoritas Jasa Keuangan (OJK)
+        menempatkan fintech
+        sebagai solusi pembiayaan inovatif,
+        khususnya bagi UMKM.
+      </p>
+      <p>
+        Dengan regulasi yang tepat,
+        fintech berpotensi
+        menjadi instrumen pembangunan ekonomi
+        sekaligus pemerataan akses keuangan.
+      </p>
+    </div>
+
+    <div class="actions">
+      <a href="materi-2.html" class="next">Lanjut ke Materi 2 →</a>
+    </div>
+
+  </div>
+
+</div>
+</body>
+</html>

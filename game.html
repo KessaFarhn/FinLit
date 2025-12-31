@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fintech Games</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --primary:#22d3ee;
+  --accent:#7c3aed;
+  --text:#e5e7eb;
+  --soft:#94a3b8;
+  --success:#22c55e;
+  --danger:#ef4444;
+}
+
+*{box-sizing:border-box;font-family:Poppins,system-ui,sans-serif}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top,#1e1b4b,transparent 55%),
+    linear-gradient(180deg,var(--bg),var(--bg));
+  color:var(--text);
+  padding:24px;
+}
+
+a{text-decoration:none}
+
+.back-global{
+  display:inline-block;
+  margin-bottom:24px;
+  background:#1e293b;
+  color:#e5e7eb;
+  padding:10px 18px;
+  border-radius:14px;
+  font-weight:600;
+}
+
+.container{
+  max-width:980px;
+  margin:auto;
+}
+
+h1{
+  text-align:center;
+  font-size:36px;
+  margin-bottom:6px;
+}
+
+.subtitle{
+  text-align:center;
+  font-size:14px;
+  color:var(--soft);
+  margin-bottom:60px;
+}
+
+/* GAME SECTION */
+.game-section{
+  background:linear-gradient(135deg,#020617,#0f172a);
+  border-radius:40px;
+  padding:40px;
+  margin-bottom:70px;
+  box-shadow:0 40px 90px rgba(0,0,0,.6);
+}
+
+.game-header{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.game-header .icon{
+  font-size:64px;
+}
+
+.game-header h2{
+  font-size:28px;
+  margin:12px 0 6px;
+}
+
+.game-header p{
+  font-size:14px;
+  color:#c7d2fe;
+  line-height:1.7;
+}
+
+.btn{
+  background:linear-gradient(135deg,var(--primary),#67e8f9);
+  border:none;
+  padding:14px 32px;
+  border-radius:999px;
+  font-weight:800;
+  color:#020617;
+  cursor:pointer;
+  margin-top:18px;
+}
+
+/* ================= SPINNER ================= */
+.spinner-wrap{
+  display:none;
+  margin-top:40px;
+  text-align:center;
+}
+
+.spinner-box{
+  position:relative;
+  width:340px;
+  height:340px;
+  margin:30px auto;
+}
+
+.spinner{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  border:14px solid #1e293b;
+  transition:transform 4s cubic-bezier(.17,.67,.32,1.2);
+  position:relative;
+  overflow:hidden;
+}
+
+.slice{
+  position:absolute;
+  width:50%;
+  height:50%;
+  transform-origin:100% 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:11px;
+  font-weight:800;
+  text-align:center;
+  padding:10px;
+  color:#020617;
+}
+
+.pointer{
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  border-left:18px solid transparent;
+  border-right:18px solid transparent;
+  border-bottom:32px solid var(--primary);
+}
+
+.fyi-box{
+  background:#020617;
+  border-radius:26px;
+  padding:28px;
+  margin-top:26px;
+  display:none;
+  animation:fade .4s ease;
+}
+
+.fyi-box h3{
+  color:var(--primary);
+  margin-bottom:10px;
+}
+
+.fyi-box p{
+  font-size:14px;
+  line-height:1.8;
+  color:#e0e7ff;
+}
+
+@keyframes fade{
+  from{opacity:0;transform:translateY(12px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ================= QUIZ ================= */
+.quiz-box{
+  display:none;
+  margin-top:30px;
+}
+
+.quiz-q{
+  font-size:18px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.quiz-btn{
+  width:100%;
+  background:#1e293b;
+  border:none;
+  color:#e5e7eb;
+  padding:14px;
+  border-radius:16px;
+  margin-bottom:10px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.quiz-btn.correct{
+  background:var(--success);
+  color:#022c22;
+  font-weight:800;
+}
+
+.quiz-btn.wrong{
+  background:var(--danger);
+  color:#450a0a;
+  font-weight:800;
+}
+
+.quiz-footer{
+  margin-top:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:14px;
+  color:#c7d2fe;
+}
+</style>
+</head>
+
+<body>
+
+<a href="javascript:history.back()" class="back-global">← Kembali</a>
+
+<div class="container">
+
+<h1>🎮 Fintech Learning Games</h1>
+<div class="subtitle">
+Belajar fintech dengan cara yang lebih hidup, visual, dan berkesan.
+</div>
+
+<!-- ================= SPINNER GAME ================= -->
+<div class="game-section">
+  <div class="game-header">
+    <div class="icon">🎡</div>
+    <h2>Fintech Knowledge Spinner</h2>
+    <p>Putar roda dan dapatkan pengetahuan penting seputar sejarah & dunia fintech.</p>
+    <button class="btn" onclick="openSpinner()">Mainkan</button>
+  </div>
+
+  <div class="spinner-wrap" id="spinnerWrap">
+    <div class="spinner-box">
+      <div class="pointer"></div>
+      <div class="spinner" id="spinner"></div>
+    </div>
+
+    <button class="btn" onclick="spin()">Putar Spinner</button>
+
+    <div class="fyi-box" id="fyiBox">
+      <h3 id="fyiTitle"></h3>
+      <p id="fyiDesc"></p>
+      <button class="btn" onclick="spin()">🔄 Spin Ulang</button>
+      <button class="btn" onclick="closeSpinner()">⬅ Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- ================= QUIZ GAME ================= -->
+<div class="game-section">
+  <div class="game-header">
+    <div class="icon">🧠</div>
+    <h2>Tebak Istilah Fintech</h2>
+    <p>Tantangan berlapis. Soal makin banyak, istilah makin dalam.</p>
+    <button class="btn" onclick="startQuiz()">Mainkan</button>
+  </div>
+
+  <div class="quiz-box" id="quizBox">
+    <div class="quiz-q" id="quizQ"></div>
+    <div id="quizOptions"></div>
+
+    <div class="quiz-footer">
+      <span id="quizScore">Skor: 0</span>
+      <div>
+        <button class="btn" onclick="nextQuiz()">Lanjut</button>
+        <button class="btn" onclick="closeQuiz()">Back</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<script>
+/* ================= SPINNER DATA (FYI) ================= */
+const fyi=[
+{
+ t:"Awal Fintech",
+ d:"Fintech berawal dari inovasi perbankan seperti ATM dan kartu kredit, jauh sebelum aplikasi mobile muncul."
+},
+{
+ t:"Internet Banking",
+ d:"Masuknya internet mengubah bank dari gedung fisik menjadi layanan digital yang bisa diakses 24 jam."
+},
+{
+ t:"E-Wallet",
+ d:"Dompet digital menggantikan uang tunai dan menjadi tulang punggung ekonomi digital modern."
+},
+{
+ t:"P2P Lending",
+ d:"Fintech lending membuka akses pembiayaan bagi masyarakat yang sebelumnya sulit menjangkau bank."
+},
+{
+ t:"QRIS",
+ d:"QRIS menyatukan berbagai metode pembayaran QR agar transaksi lebih cepat dan inklusif."
+},
+{
+ t:"Insurtech",
+ d:"Asuransi digital mempercepat klaim dan membuat proteksi keuangan lebih transparan."
+},
+{
+ t:"Keamanan Data",
+ d:"Fintech mendorong pentingnya keamanan data karena uang dan identitas berada di sistem digital."
+},
+{
+ t:"Regulasi",
+ d:"Regulasi hadir untuk menjaga keseimbangan antara inovasi dan perlindungan konsumen."
+}
+];
+
+const spinner=document.getElementById("spinner");
+const colors=["#22d3ee","#7c3aed","#38bdf8","#a78bfa","#5eead4","#c4b5fd","#67e8f9","#ddd6fe"];
+
+fyi.forEach((item,i)=>{
+  const slice=document.createElement("div");
+  slice.className="slice";
+  slice.style.background=colors[i];
+  slice.style.transform=`rotate(${i*45}deg) skewY(45deg)`;
+  slice.innerHTML=`<span>${item.t}</span>`;
+  spinner.appendChild(slice);
+});
+
+let rotation=0;
+function openSpinner(){spinnerWrap.style.display="block";}
+function closeSpinner(){spinnerWrap.style.display="none";fyiBox.style.display="none";}
+function spin(){
+  fyiBox.style.display="none";
+  const i=Math.floor(Math.random()*fyi.length);
+  rotation+=360*5+(360-i*45);
+  spinner.style.transform=`rotate(${rotation}deg)`;
+  setTimeout(()=>{
+    fyiTitle.innerText=fyi[i].t;
+    fyiDesc.innerText=fyi[i].d;
+    fyiBox.style.display="block";
+  },4000);
+}
+
+/* ================= QUIZ DATA ================= */
+const quiz=[
+{q:"Payment gateway berfungsi untuk?",o:["Memproses transaksi","Menyimpan saldo","Mengatur pajak"],a:0},
+{q:"QRIS digunakan untuk?",o:["Investasi","Pembayaran QR","Asuransi"],a:1},
+{q:"P2P Lending menghubungkan?",o:["Bank & OJK","Lender & Borrower","Merchant & Konsumen"],a:1},
+{q:"Insurtech berkaitan dengan?",o:["Asuransi","Game","Media Sosial"],a:0},
+{q:"E-wallet memudahkan?",o:["Pembayaran digital","Pencetakan uang","Audit pajak"],a:0}
+];
+
+let qi=0,score=0,locked=false;
+
+function startQuiz(){
+  quizBox.style.display="block";
+  loadQuiz();
+}
+
+function loadQuiz(){
+  locked=false;
+  quizQ.innerText=quiz[qi].q;
+  quizOptions.innerHTML="";
+  quiz[qi].o.forEach((opt,i)=>{
+    const b=document.createElement("button");
+    b.className="quiz-btn";
+    b.innerText=opt;
+    b.onclick=()=>{
+      if(locked)return;
+      locked=true;
+      if(i===quiz[qi].a){
+        b.classList.add("correct");
+        score+=10;
+      }else{
+        b.classList.add("wrong");
+        quizOptions.children[quiz[qi].a].classList.add("correct");
+      }
+      quizScore.innerText="Skor: "+score;
+    };
+    quizOptions.appendChild(b);
+  });
+}
+
+function nextQuiz(){
+  qi++;
+  if(qi<quiz.length){loadQuiz()}
+  else{
+    quizQ.innerText="🎉 Semua soal selesai!";
+    quizOptions.innerHTML="";
+  }
+}
+
+function closeQuiz(){quizBox.style.display="none";}
+</script>
+
+</body>
+</html>

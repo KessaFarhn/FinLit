@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FinLit Quest – Regulasi & Perlindungan Data Pribadi</title>
+
+<style>
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --primary:#22d3ee;
+  --accent:#7c3aed;
+  --success:#22c55e;
+  --danger:#ef4444;
+  --text:#e5e7eb;
+  --soft:#94a3b8;
+}
+
+*{
+  box-sizing:border-box;
+  font-family:Poppins,system-ui,sans-serif;
+}
+
+body{
+  margin:0;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top,#312e81,transparent 45%),
+    linear-gradient(180deg,var(--bg),var(--bg));
+  color:var(--text);
+  padding:24px 16px;
+}
+
+.game{
+  max-width:760px;
+  margin:auto;
+}
+
+.header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:24px;
+}
+
+.back{
+  background:#1e293b;
+  color:var(--text);
+  border:none;
+  padding:10px 16px;
+  border-radius:14px;
+  cursor:pointer;
+}
+
+.progress{
+  font-size:12px;
+  color:var(--soft);
+}
+
+.card{
+  background:var(--card);
+  border-radius:28px;
+  padding:28px 24px;
+  box-shadow:
+    inset 0 0 0 1px rgba(255,255,255,.05),
+    0 20px 50px rgba(0,0,0,.45);
+}
+
+.badge{
+  display:inline-block;
+  background:linear-gradient(135deg,#a78bfa,#7c3aed);
+  color:#020617;
+  font-size:11px;
+  font-weight:700;
+  padding:6px 14px;
+  border-radius:999px;
+  margin-bottom:14px;
+}
+
+h1{
+  font-size:28px;
+  margin:0 0 14px;
+}
+
+.subtitle{
+  font-size:14px;
+  color:var(--soft);
+  line-height:1.7;
+  margin-bottom:30px;
+}
+
+.story{
+  background:linear-gradient(135deg,rgba(124,58,237,.12),rgba(34,211,238,.08));
+  padding:18px;
+  border-radius:18px;
+  font-size:14px;
+  line-height:1.75;
+  margin-bottom:26px;
+}
+
+.section{
+  margin-bottom:24px;
+}
+
+.section h3{
+  font-size:18px;
+  margin-bottom:10px;
+}
+
+.section p{
+  font-size:14px;
+  line-height:1.75;
+  margin-bottom:14px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+  margin-top:14px;
+}
+
+.box{
+  background:#020617;
+  border-radius:18px;
+  padding:18px;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.box strong{
+  display:block;
+  color:var(--primary);
+  margin-bottom:6px;
+  font-size:14px;
+}
+
+.box p{
+  font-size:13px;
+  color:var(--soft);
+  line-height:1.6;
+}
+
+.warning{
+  background:rgba(239,68,68,.12);
+  border-left:4px solid var(--danger);
+  padding:16px;
+  border-radius:14px;
+  margin:26px 0;
+  font-size:14px;
+  color:#fecaca;
+}
+
+.info{
+  background:rgba(34,197,94,.12);
+  border-left:4px solid var(--success);
+  padding:16px;
+  border-radius:14px;
+  margin:26px 0;
+  font-size:14px;
+  color:#dcfce7;
+}
+
+.quote{
+  font-size:13px;
+  color:#c7d2fe;
+  font-style:italic;
+  margin:22px 0;
+  padding-left:14px;
+  border-left:3px solid var(--accent);
+}
+
+.actions{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:36px;
+}
+
+.next-stage{
+  background:linear-gradient(135deg,var(--accent),#4338ca);
+  color:white;
+  text-decoration:none;
+  padding:16px 30px;
+  border-radius:22px;
+  font-weight:800;
+  box-shadow:0 16px 40px rgba(124,58,237,.45);
+}
+
+@media(max-width:640px){
+  h1{font-size:24px;}
+}
+</style>
+</head>
+
+<body>
+<div class="game">
+
+  <div class="header">
+    <button class="back" onclick="history.back()">← Back</button>
+    <div class="progress">Materi 4 dari 4</div>
+  </div>
+
+  <div class="card">
+    <span class="badge">MATERI 4</span>
+    <h1>Regulasi & Perlindungan Data Pribadi</h1>
+    <div class="subtitle">
+      Hukum hadir sebagai rem.
+      Agar laju teknologi tak menabrak hak manusia.
+    </div>
+
+    <div class="story">
+      Regulasi dan perlindungan data pribadi lahir
+      sebagai respons atas meningkatnya risiko penyalahgunaan data
+      di ruang digital.
+      Ketika teknologi berlari kencang,
+      hukum sering tertinggal di belakang,
+      membuat posisi pengguna rentan dan nyaris tak bersuara.
+      Data dikumpulkan, diproses, bahkan disebarkan,
+      sering kali tanpa transparansi yang layak.
+    </div>
+
+    <div class="section">
+      <p>
+        Dalam situasi tersebut, regulasi berperan sebagai pagar.
+        Ia bukan untuk membatasi inovasi,
+        melainkan memastikan bahwa pemanfaatan teknologi
+        tetap menghormati hak-hak individu.
+        Tanpa aturan, data pribadi bisa berubah
+        dari aset perlindungan menjadi senjata yang berbalik arah.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>📜 Landasan Regulasi</h3>
+      <p>
+        Jurnal perlindungan data privasi dalam sistem database digital
+        menekankan bahwa regulasi tidak semata-mata bersifat legal-formal.
+        Di dalamnya terkandung dimensi etika dan teknis
+        yang saling bertaut.
+        Undang-Undang Perlindungan Data Pribadi (UU PDP) di Indonesia
+        menegaskan posisi pengguna sebagai subjek data,
+        bukan sekadar objek pengolahan.
+      </p>
+    </div>
+
+    <div class="grid">
+      <div class="box">
+        <strong>👤 Hak Subjek Data</strong>
+        <p>Hak mengetahui, mengakses, memperbaiki, dan menghapus data pribadi.</p>
+      </div>
+      <div class="box">
+        <strong>🛡️ Kewajiban Pengelola</strong>
+        <p>Menjaga keamanan data dan bertanggung jawab atas pelanggaran.</p>
+      </div>
+      <div class="box">
+        <strong>⚖️ Akuntabilitas</strong>
+        <p>Setiap kebocoran data memiliki konsekuensi hukum.</p>
+      </div>
+    </div>
+
+    <div class="warning">
+      Tantangan terbesar terletak pada implementasi:
+      penegakan hukum, pengawasan, dan kesadaran publik.
+    </div>
+
+    <div class="quote">
+      “Privasi bukan bonus tambahan,
+      melainkan hak dasar manusia.”
+      — Nurkhaliza (2025)
+    </div>
+
+    <div class="info">
+      Regulasi hanya akan bermakna
+      jika didukung teknologi yang aman
+      dan masyarakat yang sadar.
+    </div>
+<!-- NAVIGASI BAWAH -->
+<div class="nav-bottom">
+
+  <a href="mulai.html" class="nav-card nav-back">
+    <h4>← Kembali ke Mulai</h4>
+    <p>Lihat ulang peta pembelajaran dan pilih langkah berikutnya.</p>
+    <span>Kembali</span>
+  </a>
+
+  <a href="media-interaktif.html" class="nav-card nav-recommend">
+    <h4>🎬 Pendukung Pembelajaran</h4>
+    <p>Perkuat pemahaman lewat video, infografis, dan dokumen.</p>
+    <span>Lanjutkan →</span>
+  </a>
+
+</div>
+
+<style>
+/* NAV BOTTOM */
+.nav-bottom{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+  margin-top:40px;
+}
+
+.nav-card{
+  text-decoration:none;
+  color:#e5e7eb;
+  border-radius:26px;
+  padding:26px;
+  box-shadow:0 20px 45px rgba(0,0,0,.5);
+  transition:.35s ease;
+  position:relative;
+  overflow:hidden;
+}
+
+.nav-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:radial-gradient(circle at top left,rgba(255,255,255,.12),transparent 45%);
+  opacity:0;
+  transition:.35s;
+}
+
+.nav-card:hover::after{
+  opacity:1;
+}
+
+.nav-card:hover{
+  transform:translateY(-6px);
+}
+
+.nav-card h4{
+  font-size:18px;
+  margin-bottom:8px;
+}
+
+.nav-card p{
+  font-size:14px;
+  color:#94a3b8;
+  line-height:1.6;
+}
+
+.nav-card span{
+  display:inline-block;
+  margin-top:16px;
+  padding:8px 20px;
+  border-radius:999px;
+  font-size:13px;
+  font-weight:800;
+}
+
+/* BACK */
+.nav-back{
+  background:linear-gradient(135deg,#020617,#0f172a);
+}
+
+.nav-back span{
+  background:#1e293b;
+  color:#e5e7eb;
+}
+
+/* RECOMMEND */
+.nav-recommend{
+  background:linear-gradient(135deg,#7c3aed,#4338ca);
+}
+
+.nav-recommend span{
+  background:#ffffff;
+  color:#4338ca;
+}
+</style>
+
+    
